@@ -13,7 +13,13 @@ This is a project for CS391: Web Application Development course of Özyeğin Uni
 
 @demirhansevim -> Register and Login page development
 
-@iserdardursun -> Responive UI development
+@iserdardursun -> Responsive UI development
 
 ## Use Cases
-
+* Register
+* Log in
+* Log out
+* Create to-do list
+* Add list element to a to-do list
+* Delete list element from a to-do list
+* Edit list element of a to-do list

@@ -21,7 +21,7 @@ function register(username, password, email, birthDate, gender) {
     if (localStorage.getItem(username) != null)
         return false;
     var user = new User(username, password, email, birthDate, gender);
-    localStorage.setItem(username, JSON.stringify(user));
+    updateUser(user);
     return true;
 }
 
@@ -41,7 +41,31 @@ function login(username, password) {
         return false;
     var session = JSON.parse(sessionStorage.getItem("session"));
     session.user = username;
-    sessionStorage.setItem("session", JSON.stringify(session));
+    updateSession(session);
     return true;
 }
 
+/**
+ * Logs a user out of the session.
+ */
+function logout() {
+    var session = JSON.parse(sessionStorage.getItem("session"));
+    session.user = null;
+    updateSession(session);
+}
+
+/**
+ * Updates session information in the session stroage.
+ * @param {Session} session 
+ */
+function updateSession(session) {
+    sessionStorage.setItem("session", JSON.stringify(session));
+}
+
+/**
+ * Updates user information in the local storage.
+ * @param {User} user 
+ */
+function updateUser(user) {
+    localStorage.setItem(user.username, JSON.stringify(user));
+}

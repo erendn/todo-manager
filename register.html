@@ -19,7 +19,7 @@
         <hr>
     </header>
 
-    <form onsubmit="return inputRegister()">
+    <form method="POST" action="todo.html" onsubmit= "return inputRegister()">
         <div class="registerPage">
             <h2>Register</h2>
 
@@ -56,10 +56,15 @@
                     if(gender[i].checked) 
                      gender = gender[i].value
                 }
-                console.log(password)
-                console.log(checkpassword)
-                if(password == checkpassword)
-                    return register(username,password,email,birthday,gender) 
+               var registerBool = register(username,password,email,birthday,gender) 
+                if(password == checkpassword) {
+                    if(registerBool){
+                        login(username,password)
+                        return true
+                 }
+                    else
+                        return false 
+                }
                 else {
                     alert("Passwords don't match")
                     return false
@@ -86,9 +91,10 @@
     <hr>
     <footer>
         <div class="footer">
-            <p>bizler hakkında, firma hakkında bilgi</p>
+           <p>This to-do list project was prepared for the Web Application Development course in 2020.</p>
+           <p>Prepared by OZU students.</p>
         </div>
-    </footer>
+     </footer>
 
 </body>
 

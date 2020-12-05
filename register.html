@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register Page</title>
+    <link rel="icon" href="icon.png" type="image/png"> </link>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="text/javascript" src="scripts/utils.js"></script>
+    <script type="text/javascript" src="scripts/components.js"></script>
+</head>
+
+<body onload="return initSession()">
+
+    <header>
+        <div class="logo">
+            logo
+        </div>
+
+        <hr>
+    </header>
+
+    <form onsubmit="return inputRegister()">
+        <div class="registerPage">
+            <h2>Register</h2>
+
+            <label for="registerUsername">Username:</label>
+            <input type="text" id="registerUsername" placeholder="Enter Username" required><br>
+
+            <label for="registerMail">E-mail:</label>
+            <input type="email" id="registerMail" placeholder="Enter E-mail" required> <br>
+
+            <label for="registerPassword">Password:</label>
+            <input type="password" id="registerPassword" placeholder="Enter Password" required> <br>
+
+            <label for="checkPassword"> Check Password:</label>
+            <input type="password" id="checkPassword" placeholder="Enter Password Again" required><br>
+
+            <label for="registerBirthday">Birthday:</label>
+            <input type="date" id="registerBirthday" placeholder="Enter Birthday" required><br>
+            <p>Choose Gender:</p>
+            <label for="GenderMale">Male</label>
+            <input type="radio" id="GenderMale" name="registerGender" value="Male" required>
+
+            <label for="GenderFemale">Female</label>
+            <input type="radio" id="GenderFemale" name="registerGender" value="Female"><br><br>
+
+            <script>
+                function inputRegister() {
+                var username = document.getElementById("registerUsername").value
+                var password = document.getElementById("registerPassword").value
+                var checkpassword = document.getElementById("checkPassword").value
+                var email = document.getElementById("registerMail").value
+                var birthday = document.getElementById("registerBirthday").value
+                var gender = document.getElementsByName('registerGender')
+                for(i = 0; i < gender.length; i++) { 
+                    if(gender[i].checked) 
+                     gender = gender[i].value
+                }
+                console.log(password)
+                console.log(checkpassword)
+                if(password == checkpassword)
+                    return register(username,password,email,birthday,gender) 
+                else {
+                    alert("Passwords don't match")
+                    return false
+                }
+
+            }
+            
+            
+                
+                   
+
+            
+            </script>
+
+            <input type="submit" id="registerButton" value="Register" >
+    </form>
+    </div>
+
+    <div class="registerLogin">
+        <p> If you already have an account you can log in <a href="login.html"> here </a></p>
+    </div>
+
+
+    <hr>
+    <footer>
+        <div class="footer">
+            <p>bizler hakkında, firma hakkında bilgi</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

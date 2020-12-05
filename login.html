@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<head>
+  <title> Login Page </title>
+  <link rel="icon" href="icon.png" type="image/png"> </link>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="text/javascript" src="scripts/utils.js"></script>
+  <script type="text/javascript" src="scripts/components.js"></script>
+</head>
+
+<body onload="return initSession()">
+
+  <header>
+    <div class="logo">
+      logo
+    </div>
+  </header>
+
+  <form method="POST" action="todo.html" onsubmit= "return inputLogin()">
+
+    <div class="loginPage">
+
+      <h2>Login</h2>
+
+      <label for="loginUsername">Username:</label>
+      <input type="text" id="loginUsername" name="username" placeholder="Enter Username" required><br>
+
+      <label for="loginPassword">Password:</label>
+      <input type="password" id="loginPassword" placeholder="Enter Password" required><br>
+
+
+    <script> 
+    function inputLogin(){
+                var username = document.getElementById("loginUsername").value
+                var password = document.getElementById("loginPassword").value               
+                var loginBool = login(username,password)
+                if(loginBool == null || loginBool == false){
+                    if(loginBool == null)
+                    alert("There is no user with that name")
+                    if(loginBool == false)
+                    alert("Wrong password")
+                    return false
+                }
+                 else
+                    return true               
+              }
+      
+
+    </script>
+      <input type="submit" id="LoginButton" value="Login">
+
+    </div>
+
+    <div class="loginRegister">
+      <p> If you don't have an account you can register <a href="register.html"> here </a></p>
+    </div>
+
+
+    <footer>
+      <div class="footer">
+        <p>bizler hakkında, firma hakkında bilgi</p>
+      </div>
+    </footer>
+</body>
+
+</html>

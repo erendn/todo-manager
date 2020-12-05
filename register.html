@@ -19,7 +19,7 @@
         <hr>
     </header>
 
-    <form onsubmit= "return inputRegister()">
+    <form method="GET" action="todo.html" onsubmit= "return inputRegister()">
         <div class="registerPage">
             <h2>Register</h2>
 
@@ -60,7 +60,6 @@
                 if(password == checkpassword) {
                     if(registerBool){
                         login(username,password)
-                        window.location.href="todo.html"
                         return true
                  }
                     else

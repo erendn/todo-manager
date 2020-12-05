@@ -3,7 +3,7 @@ TodoManager is a to-do list application that can save lists on local browser mem
 
 This is a project for CS391: Web Application Development course of Özyeğin University.
 
-## [Webpage](https://biarmic.github.io/cs391-course-project/)
+## [Webpage](https://biarmic.github.io/todo-manager/)
 
 ## Work Allocation
 

@@ -17,11 +17,11 @@ function initSession() {
 * @param {Date} birthDate 
 * @param {boolean} gender 
 */
-function register(username, password, name, birthDate, gender) {
+function register(username, password, email, birthDate, gender) {
     if (localStorage.getItem(username) != null)
         return false;
-    var user = new User(username, password, name, birthDate, gender);
-    localStorage.setItem(username, user);
+    var user = new User(username, password, email, birthDate, gender);
+    localStorage.setItem(username, JSON.stringify(user));
     return true;
 }
 
@@ -36,6 +36,7 @@ function login(username, password) {
     var user = localStorage.getItem(username);
     if (user == null)
         return null;
+    user = JSON.parse(user);
     if (user.password != password)
         return false;
     var session = JSON.parse(sessionStorage.getItem("session"));
@@ -43,3 +44,4 @@ function login(username, password) {
     session.setItem("session", JSON.stringify(session));
     return true;
 }
+

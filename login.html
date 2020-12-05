@@ -16,7 +16,7 @@
     </div>
   </header>
 
-  <form method="POST" action="todo.html" onsubmit= "return inputLogin()">
+  <form onsubmit= "return inputLogin()">
 
     <div class="loginPage">
 
@@ -41,8 +41,10 @@
                     alert("Wrong password")
                     return false
                 }
-                 else
-                    return true               
+                 else{
+                    window.location.href="todo.html"
+                    return true 
+                 }              
               }
       
 

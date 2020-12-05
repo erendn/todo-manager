@@ -41,7 +41,7 @@ function login(username, password) {
         return false;
     var session = JSON.parse(sessionStorage.getItem("session"));
     session.user = username;
-    session.setItem("session", JSON.stringify(session));
+    sessionStorage.setItem("session", JSON.stringify(session));
     return true;
 }
 

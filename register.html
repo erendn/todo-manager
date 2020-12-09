@@ -30,14 +30,18 @@
             <input type="email" id="registerMail" placeholder="Enter E-mail" required> <br>
 
             <label for="registerPassword">Password:</label>
-            <input type="password" id="registerPassword" placeholder="Enter Password" required> <br>
+            <input type="password" id="registerPassword" placeholder="Enter Password" onkeyup="passwordValidation()" required> <br>
 
-            <label for="checkPassword"> Check Password:</label>
-            <input type="password" id="checkPassword" placeholder="Enter Password Again" required><br>
+            <label for="checkPassword">Check Password:
+            <input type="password" id="checkPassword" placeholder="Enter Password Again" onkeyup="passwordValidation()" required>
+            <span id='message'></span>
+            </label>
 
+            <br>
             <label for="registerBirthday">Birthday:</label>
             <input type="date" id="registerBirthday" placeholder="Enter Birthday" required><br>
             <p>Choose Gender:</p>
+            
             <label for="GenderMale">Male</label>
             <input type="radio" id="GenderMale" name="registerGender" value="Male" required>
 
@@ -71,6 +75,15 @@
                 }
 
             }
+
+            function passwordValidation() {               
+                if (document.getElementById('registerPassword').value != document.getElementById('checkPassword').value) {
+                    document.getElementById('message').style.color = 'red';
+                    document.getElementById('message').innerHTML = 'Your passwords do not match'; 
+}
+                else
+                    document.getElementById('message').innerHTML = "";
+}
             
             
                 

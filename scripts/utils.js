@@ -69,3 +69,17 @@ function updateSession(session) {
 function updateUser(user) {
     localStorage.setItem(user.username, JSON.stringify(user));
 }
+
+/**
+ * Returns the logged in user instance.
+ */
+function getUser() {
+    var user = Object.assign(new User(), JSON.parse(localStorage.getItem(JSON.parse(sessionStorage.getItem("session")).user)));
+    for (var i = 0; i < user.lists.length; ++i) {
+        for (var j = 0; j < user.lists[i].length; ++j) {
+            user.lists[i][j] = Object.assign(new ListElement(), user.lists[i][j]);
+        }
+        user.lists[i] = Object.assign(new List(), user.lists[i]);
+    }
+    return user;
+}

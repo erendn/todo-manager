@@ -6,11 +6,12 @@
   </title>
   <link rel="icon" href="icon.png" type="image/png">
   </link>
-  <link rel="stylesheet" href="style.css"></link>
+  <link rel="stylesheet" href="style.css">
+  </link>
 </head>
-  <body>
-  <script src="scripts/components.js"></script>
-  <script src="scripts/utils.js"></script>
+
+<body onload="loadLists()">
+
   <header>
     <div class="logo">
       <a id="logo">
@@ -22,32 +23,46 @@
       <form method="GET" action="index.html">
         <button id="logOut">Log Out</button>
       </form>
-    
+
     </div>
   </header>
 
   <hr>
   <div class="container">
     <div class="toDo">
-      <button id="addToDo">Add New To Do</button>
-      <button id="removeToDo">Remove Last To Do</button>
+      <button id="addToDo" onclick="addNewList()">Add New List</button>
       <hr>
     </div>
-
-    <div class="tasks">
-      <button id="addTask">Add New Task</button>
-      <button id="removeTask">Remove Last Task</button>
+    <div id="lists">
+      <!-- Todo lists will be appended here -->
+      <!--
+      <div class="list">
+        <div class="list-top">
+          <textarea class="list-name" rows="1" cols="20">New List</textarea>
+          <button id="addTask">Add New Task</button>
+          <button>X</button>
+        </div>
+        <div class="task">
+          <input type="checkbox" class="task-check">
+          <textarea class="task-name" rows="1" cols="50">Task</textarea>
+          <button type="button">X</button>
+        </div>
+      </div>
+      -->
     </div>
-
   </div>
   <hr>
 
-     <footer>
-        <div class="footer">
-          <p>since 2020, @desg</p>
-        </div>
-     </footer>
+  <footer>
+    <div class="footer">
+      <p>since 2020, @desg</p>
+    </div>
+  </footer>
 
-    </body>
-    
+  <script src="scripts/components.js"></script>
+  <script src="scripts/utils.js"></script>
+  <script src="scripts/htmlConverter.js"></script>
+
+</body>
+
 </html>

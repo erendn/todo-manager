@@ -10,7 +10,7 @@
   </link>
 </head>
 
-<body onload="loadLists()">
+<body onload="init()">
 
   <header>
     <div class="logo">
@@ -30,25 +30,12 @@
   <hr>
   <div class="container">
     <div class="toDo">
+      <input type="text" id="newListName" placeholder="New List"></input>
       <button id="addToDo" onclick="addNewList()">Add New List</button>
       <hr>
     </div>
     <div id="lists">
       <!-- Todo lists will be appended here -->
-      <!--
-      <div class="list">
-        <div class="list-top">
-          <textarea class="list-name" rows="1" cols="20">New List</textarea>
-          <button id="addTask">Add New Task</button>
-          <button>X</button>
-        </div>
-        <div class="task">
-          <input type="checkbox" class="task-check">
-          <textarea class="task-name" rows="1" cols="50">Task</textarea>
-          <button type="button">X</button>
-        </div>
-      </div>
-      -->
     </div>
   </div>
   <hr>
@@ -59,6 +46,8 @@
     </div>
   </footer>
 
+  <script src="scripts/list.js"></script>
+  <script src="scripts/listElement.js"></script>
   <script src="scripts/components.js"></script>
   <script src="scripts/utils.js"></script>
   <script src="scripts/htmlConverter.js"></script>

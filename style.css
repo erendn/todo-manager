@@ -65,7 +65,7 @@
   margin-bottom: 40vh;
 }
 
-#addTask {
+.addTask {
   background-color: green;
   color: white;
   top: 10px;

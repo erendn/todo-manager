@@ -71,15 +71,73 @@ function updateUser(user) {
 }
 
 /**
- * Returns the logged in user instance.
+ * Loads all lists of the user.
  */
-function getUser() {
-    var user = Object.assign(new User(), JSON.parse(localStorage.getItem(JSON.parse(sessionStorage.getItem("session")).user)));
-    for (var i = 0; i < user.lists.length; ++i) {
-        for (var j = 0; j < user.lists[i].length; ++j) {
-            user.lists[i][j] = Object.assign(new ListElement(), user.lists[i][j]);
+function init() {
+    var username = JSON.parse(sessionStorage.getItem("session")).user;
+    USER = Object.setPrototypeOf(JSON.parse(localStorage.getItem(username)), User.prototype);
+    for (var i = 0; i < USER.lists.length; ++i) {
+        Object.setPrototypeOf(USER.lists[i], List.prototype);
+        for (var j = 0; j < USER.lists[i].tasks.length; ++j) {
+            Object.setPrototypeOf(USER.lists[i].tasks[j], ListElement.prototype);
         }
-        user.lists[i] = Object.assign(new List(), user.lists[i]);
     }
-    return user;
+    USER.appendDOM();
 }
+
+/**
+ * Adds a new list for the user.
+ */
+function addNewList() {
+    var name = document.getElementById("newListName").value;
+    if (name.length != 0) {
+        var id = USER.findId();
+        var list = new List(id, document.getElementById("newListName").value);
+        USER.lists.push(list);
+        updateUser(USER);
+    } else
+        alert("List name cannot be empty.");
+}
+
+/**
+ * Removes the list with the given id from the page and storage.
+ * @param {string} id 
+ */
+function removeList(id) {
+    USER.removeList(id);
+    updateUser(USER);
+}
+
+/**
+ * Adds a new task to the list with the given id.
+ * @param {string} id 
+ */
+function addNewTask(id) {
+    var name = document.getElementById("newTaskName-" + id).value;
+    if (name.length != 0) {
+        var list = USER.getList(id);
+        list.tasks.push(new ListElement(list, list.findId(), name));
+        updateUser(USER);
+    } else
+        alert("Task name cannot be empty.");
+}
+
+/**
+ * Removes the task with the given id from the page.
+ * @param {string} id 
+ */
+function removeTask(id) {
+    USER.getList(id.split("e")[0]).removeTask(id);
+    updateUser(USER);
+}
+
+/**
+ * Updates the task.
+ * @param {string} id 
+ */
+function checkTask(id) {
+    USER.getList(id.split("e")[0]).getTask(id).check();
+    updateUser(USER);
+}
+
+var USER = null;

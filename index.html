@@ -7,6 +7,7 @@
       Homepage - TodoManager
    </title>
    <link rel="stylesheet" href="style.css"></link>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -15,18 +16,26 @@
    
    <header>
         <div class="logo">
-            <IMG class="logo1" SRC="assets\logo1.png" ALT="some text">
-            <IMG class="logo2" SRC="assets\logo2.png" ALT="some text">
+            <IMG class="logo1" SRC="assets\logo\logo1.png" ALT="some text">
+            <IMG class="logo2" SRC="assets\logo\logo2.png" ALT="some text">
         </div>
-  </header>
-<hr class="hr-14">
-   <div class="buttons">
-      <input id="button1" type="button" onclick="location.href='login.html'" value="Login" />
-      <input id="button2" type="button" onclick="location.href='register.html'" value="Register" />
+   </header>
+   <hr class="hr-14">
+   <div class="button-login-div">
+
+      <a id="button1" type="button" class="button-login" onclick="location.href='login.html'" ontouchstart=""><span>Login</span></a>
+      <a id="button2" type="button" class="button-login" onclick="location.href='register.html'" ontouchstart=""><span>Register</span></a>
+
    </div>
  
 
-<iframe src="./footer.html" style="border:none; height:50%; width:100%;"></iframe>
+   <hr class="hr-14">
+   <footer>
+      <div class="footer">
+         <p>This to-do list project was prepared for the Web Application Development course in 2020.</p>
+         <p>Prepared by OZU students.</p>
+      </div>
+   </footer>
 
 </body>
 

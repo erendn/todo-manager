@@ -3,7 +3,7 @@
     src: url('assets/fonts/OstrichSans-Heavy.otf');
 }
 
-html *
+html 
 {
    font-family: "OstrichSans";
    -webkit-font-smoothing: antialiased;
@@ -11,6 +11,10 @@ html *
  background-color: #131417;
 }
 
+body {
+	margin: 0;
+	padding: 0;
+}
 
 .logo {
 
@@ -73,20 +77,59 @@ hr.hr-14 {
   background-image: -o-linear-gradient(left, #1c1c1c, #6e6d6d, #1c1c1c);
 }
 
-.footer {
-  margin: auto;
-  width: 50%;
-  border: 3px solid green;
-  padding: 10px;
+.InnerSection {
+	float: left;
+	margin-top: 2vw;
+	margin-left: 4vw;
+width: 70%;
 }
 
+.footer {
+	position: absolute;
+	bottom: 0px;
+	background-color: #0d0e0f;
+	color: white;
+	width: 100vw;
+}
+@media screen and (max-width: 700px) {
+ h2.footer {
+font-size:200px;
+ }
+}
+
+.Credits {
+	margin-top: 2vw;
+	margin-right: 4vw;
+	width: 6vw;
+	text-align: left;
+	float: right;
+        }
+
+@media screen and (max-width: 700px) {
+ .Credits {
+	margin-top: 5vw;
+	margin-right: 10vw;
+	width: 10%;
+	text-align: left;
+	float: right;
+ }
+}
 .button-login-div {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: fit-content;
+  width: fit-content; 
+  margin-top: 10vw;
 }
-
+@media screen and (max-width: 700px) {
+.button-login-div {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content; 
+  margin-top: 200px;
+ }
+}
 
 
 .button-login span {

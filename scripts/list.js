@@ -10,6 +10,9 @@ function List(id, name) {
     this.appendDOM();
 }
 
+/**
+ * Appends the list on the page.
+ */
 List.prototype.appendDOM = function() {
     var html = `<div class="list" id="${this.id}">
       <div class="list-top">
@@ -22,10 +25,16 @@ List.prototype.appendDOM = function() {
     this.tasks.forEach(task => task.appendDOM());
 }
 
+/**
+ * Removes the list from the page.
+ */
 List.prototype.remove = function () {
     document.getElementById(this.id).remove();
 }
 
+/**
+ * Finds an empty index for list element.
+ */
 List.prototype.findId = function () {
     for (var i = 0; i <= this.tasks.length; ++i) {
         var exists = false;
@@ -38,6 +47,10 @@ List.prototype.findId = function () {
     return -1;
 }
 
+/**
+ * Removes list element from the list and the page.
+ * @param {number} id 
+ */
 List.prototype.removeTask = function (id) {
     for (var i = 0; i < this.tasks.length; ++i) {
         if (this.tasks[i].id == id) {
@@ -47,6 +60,10 @@ List.prototype.removeTask = function (id) {
     }
 }
 
+/**
+ * Returns the list element with the given id.
+ * @param {number} id 
+ */
 List.prototype.getTask = function (id) {
     for (var i = 0; i < this.tasks.length; ++i) {
         if (this.tasks[i].id == id) {

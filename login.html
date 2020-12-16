@@ -2,7 +2,8 @@
 
 <head>
   <title> Login Page </title>
-  <link rel="icon" href="" type="image/png"> </link>
+  <link rel="icon" href="" type="image/png">
+  </link>
   <link rel="stylesheet" href="style.css" />
   <script type="text/javascript" src="scripts/utils.js"></script>
   <script type="text/javascript" src="scripts/components.js"></script>
@@ -10,56 +11,56 @@
 </head>
 
 <body onload="return initSession()">
-   <header>
-        <div class="logo">
-            <IMG class="logo1" href="index.html"  SRC="assets\logo\logo1.png" ALT="some text">
-            <IMG class="logo2" href="index.html"  SRC="assets\logo\logo2.png" ALT="some text">
-        </div>
-   </header>
-    <hr class="hr-14">
-    <div class="container12" style="margin-top:100px; margin-bottom: 100px;">
-      <div class="user signinBx">
-        <div class="imgBx"><img src="assets\2921100196.png" alt="" /></div>
-        <div class="formBx">
-          <form method="POST" action="todo.html" onsubmit= "return inputLogin()">
-            <h2 style="color:#0B5F58;">Sign In</h2>
-            <input type="text" id="loginUsername" name="username" placeholder="Enter Username" required />
-            <input type="password" id="loginPassword" placeholder="Enter Password" required />
-            <input type="submit" id="LoginButton" value="Login" />
-          </form>
-        </div>
+  <header>
+    <div class="logo">
+      <IMG class="logo1" href="index.html" SRC="assets\logo\logo1.png" ALT="some text">
+      <IMG class="logo2" href="index.html" SRC="assets\logo\logo2.png" ALT="some text">
+    </div>
+  </header>
+  <hr class="hr-14">
+  <div class="container12" style="margin-top:100px; margin-bottom: 100px;">
+    <div class="user signinBx">
+      <div class="imgBx"><img src="assets\2921100196.png" alt="" /></div>
+      <div class="formBx">
+        <form method="POST" action="todo.html" onsubmit="return inputLogin()">
+          <h2 style="color:#0B5F58;">Sign In</h2>
+          <input type="text" id="loginUsername" name="username" placeholder="Enter Username" required />
+          <input type="password" id="loginPassword" placeholder="Enter Password" required />
+          <input type="submit" id="LoginButton" value="Login" />
+        </form>
       </div>
     </div>
+  </div>
 
-    <script> 
-    function inputLogin(){
-                var username = document.getElementById("loginUsername").value
-                var password = document.getElementById("loginPassword").value               
-                var loginBool = login(username,password)
-                if(loginBool == null || loginBool == false){
-                    if(loginBool == null)
-                    alert("There is no user with that name.")
-                    if(loginBool == false)
-                    alert("Wrong password.")
-                    return false
-                }
-                 else            
-                    return true               
-              }
-      
+  <script>
+    function inputLogin() {
+      var username = document.getElementById("loginUsername").value
+      var password = document.getElementById("loginPassword").value
+      var loginBool = login(username, password)
+      if (loginBool == null || loginBool == false) {
+        if (loginBool == null)
+          alert("There is no user with that name.")
+        if (loginBool == false)
+          alert("Wrong password.")
+        return false
+      }
+      else
+        return true
+    }
 
-    </script>
 
-<div class="footer">
-        <div class="InnerSection">
-            <!-- Add Logo -->
-            <h2>TODO</h2>
-<p>This to-do list project was prepared for the Web Application Development course in 2020.</p>
-        </div>
-        <div class="Credits">
-            Prepared by OZU students.
-        </div>
+  </script>
+
+  <div class="footer">
+    <div class="InnerSection">
+      <!-- Add Logo -->
+      <h2>TODO</h2>
+      <p>This to-do list project was prepared for the Web Application Development course in 2020.</p>
     </div>
+    <div class="Credits">
+      Prepared by OZU students.
+    </div>
+  </div>
 
 </body>
 

@@ -95,22 +95,16 @@ hr.hr-14 {
 	float: left;
 	margin-top: 2vw;
 	margin-left: 4vw;
-	width: 70%;
+width: 70%;
 }
-@media screen and (max-width: 700px) {
-.InnerSection {
-	float: left;
-	margin-top: 2vw;
-	margin-left: 4vw;
-	width: 50%;
-}
-}
+
 .footer {
-	position: static;
+	position: fixed;
 	bottom: 0px;
 	background-color: #0d0e0f;
 	color: white;
-	width: 100%;
+	width: 100vw;
+	margin-top: -50px;
 }
 @media screen and (max-width: 700px) {
  h2.footer {
@@ -119,7 +113,7 @@ font-size:200px;
 }
 
 .Credits {
-	margin-top: 6vw;
+	margin-top: 2vw;
 	margin-right: 4vw;
 	width: 6vw;
 	text-align: left;
@@ -128,7 +122,7 @@ font-size:200px;
 
 @media screen and (max-width: 700px) {
  .Credits {
-	margin-top: 15vw;
+	margin-top: 5vw;
 	margin-right: 10vw;
 	width: 10%;
 	text-align: left;
@@ -257,19 +251,26 @@ font-size:200px;
   right: 10px;
 }
 
+.section1 {
+  position: relative;
+  min-height: 100vh;
+  background-color: #131417;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 
-
-.container12 {
+.section1 .container {
   position: relative;
   width: 800px;
   height: 500px;
   background: #fff;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
-  margin: 0 auto;
-  overflow:hidden;
+  overflow: hidden;
 }
 
-.container12 .user {
+.section1 .container .user {
   position: absolute;
   top: 0;
   left: 0;
@@ -278,7 +279,7 @@ font-size:200px;
   display: flex;
 }
 
-.container12 .user .imgBx {
+.section1 .container .user .imgBx {
   position: relative;
   width: 50%;
   height: 100%;
@@ -286,7 +287,7 @@ font-size:200px;
   transition: 0.5s;
 }
 
-.container12 .user .imgBx img {
+.section1 .container .user .imgBx img {
   position: absolute;
   top: 0;
   left: 0;
@@ -295,9 +296,10 @@ font-size:200px;
   object-fit: cover;
 }
 
-.container12 .user .formBx {
+.section1 .container .user .formBx {
   position: relative;
   width: 50%;
+  height: 100%;
   background: #fff;
   display: flex;
   justify-content: center;
@@ -306,7 +308,7 @@ font-size:200px;
   transition: 0.5s;
 }
 
-.container12 .user .formBx form h2 {
+.section1 .container .user .formBx form h2 {
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
@@ -317,7 +319,7 @@ font-size:200px;
   color: #555;
 }
 
-.container12 .user .formBx form input {
+.section1 .container .user .formBx form input {
   position: relative;
   width: 100%;
   padding: 10px;
@@ -332,7 +334,7 @@ font-size:200px;
   font-weight: 300;
 }
 
-.container12 .user .formBx form input[type='submit'] {
+.section1 .container .user .formBx form input[type='submit'] {
   max-width: 100px;
   background: #0B5F58;
   color: #fff;
@@ -343,63 +345,48 @@ font-size:200px;
   transition: 0.5s;
 }
 
-.container12 .signupBx .formBx {
+.section1 .container .signupBx .formBx {
   left: 100%;
 }
 
-.container12.active .signupBx .formBx {
+.section1 .container.active .signupBx .formBx {
   left: 0;
 }
-.container12 .signupBx .imgBx {
+
+.section1 .container .signupBx .imgBx {
   left: -100%;
 }
 
-.container12.active .signupBx .imgBx {
+.section1 .container.active .signupBx .imgBx {
   left: 0%;
 }
 
-.container12 .signinBx .formBx {
+.section1 .container .signinBx .formBx {
   left: 0%;
 }
 
-.container12.active .signinBx .formBx {
+.section1 .container.active .signinBx .formBx {
   left: 100%;
 }
 
-.container12 .signinBx .imgBx {
+.section1 .container .signinBx .imgBx {
   left: 0%;
 }
 
-.container12.active .signinBx .imgBx {
+.section1 .container.active .signinBx .imgBx {
   left: -100%;
 }
 
 @media (max-width: 991px) {
-  .container12 {
-    max-width: 90%;
-    margin:5%;
+  .section1 .container {
+    max-width: 400px;
   }
 
-  .container12 .imgBx {
+  .section1 .container .imgBx {
     display: none;
   }
 
-  .container12 .user .formBx {
+  .section1 .container .user .formBx {
     width: 100%;
   }
 }
-/* CUSTOM RADIO */
-.gender-selector > input[type="radio"] {
-  display:none;
-}
-.gender-selector > input[type="radio"] + label .fa-circle {
-  color: silver;
-  transition: color .2s ease;
-}
-.gender-selector > input[type="radio"]:checked + label .male {
-  color: deepskyblue;
-}
-.gender-selector > input[type="radio"]:checked + label .female {
-  color: pink;
-}
-/* END CUSTOM RADIO */

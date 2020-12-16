@@ -22,7 +22,7 @@
         <div class="imgBx"><img src="assets\2921100196.png" alt="" /></div>
         <div class="formBx">
           
-          <form method="GET" action="todo.html" onsubmit= "return inputRegister()">
+          <form method="POST" action="todo.html" onsubmit= "return inputRegister()">
             <h2 style="color:#0B5F58;">Register</h2>
             <input type="text" id="registerUsername" placeholder="Enter Username" required />
             <input type="email" id="registerMail" placeholder="Enter E-mail" required />
@@ -61,6 +61,7 @@
                         return true
                  }
                     else
+						alert("That user already exists.")
                         return false 
                 }
                 else {

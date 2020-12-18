@@ -24,8 +24,8 @@ ListElement.prototype.appendDOM = function () {
             <li class="list-li" id="${this.id}">
             
             
-                <input class="list-input" id="item-0" type="checkbox" onchange="checkTask('${this.id}')" ${this.checked ? "checked" : ""}>
-                <label class="list-label" for="item-0"> ${this.name}</label>
+                <input class="list-input" type="checkbox" onchange="checkTask('${this.id}')" ${this.checked ? "checked" : ""}>
+                <label class="list-label"> ${this.name}</label>
                 <button class="button button3" onclick="removeTask('${this.id}')">X</button>
             </li>`;
 

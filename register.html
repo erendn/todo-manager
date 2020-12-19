@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 
 <head>
-  <title> Register Page </title>
-  <link rel="shortcut icon"  type="image/png" href="assets\logo\logo1.png">  </link>
+  <title>Register</title>
+  <link rel="shortcut icon" type="image/png" href="assets/logo.png" />
   <link rel="stylesheet" href="style.css" />
   <script type="text/javascript" src="scripts/utils.js"></script>
   <script type="text/javascript" src="scripts/components.js"></script>
@@ -11,33 +11,37 @@
 
 <body onload="return initSession()">
   <header>
-    <div class="logo">
-      <IMG class="logo1" SRC="assets\logo\logo1.png" ALT="some text">
-      <IMG class="logo2" SRC="assets\logo\logo2.png" ALT="some text">
+    <div class="logoContainer">
+      <a href="index.html">
+        <img class="logo" src="assets/logo.png">
+        <img class="logoText" src="assets/logo-text.png">
+      </a>
     </div>
   </header>
-  <hr class="hr-14">
-  <div class="container12" style="margin-top:100px; margin-bottom: 100px;">
-    <div class="user signinBx">
-      <div class="imgBx"><img src="assets\2921100196.png" alt="" /></div>
-      <div class="formBx">
+  <hr>
+  <div class="formContainer">
+    <div class="formContainerInside">
+      <div class="formImage">
+        <img src="assets/clipboard.png" />
+      </div>
+      <div class="formBox">
 
         <form method="POST" action="todo.html" onsubmit="return inputRegister()">
           <h2 style="color:#0B5F58;">Register</h2>
           <input type="text" id="registerUsername" placeholder="Enter Username" required />
           <input type="email" id="registerMail" placeholder="Enter E-mail" required />
-          <input type="password" id="registerPassword" placeholder="Enter Password" onkeyup="passwordValidation()"
-            required />
-          <input type="password" id="checkPassword" placeholder="Enter Password Again" onkeyup="passwordValidation()"
-            required />
-
+          <input type="password" id="registerPassword" placeholder="Enter Password" onkeyup="passwordValidation()" required />
+          <input type="password" id="checkPassword" placeholder="Enter Password Again" onkeyup="passwordValidation()" required />
           <span id='message'></span>
-          <input type="date" id="registerBirthday" placeholder="Enter Birthday" required />
-          <label style="margin-right: 20px; margin-left: 5px;" for="GenderMale">Male</label>
-          <input style="width:10px;" type="radio" id="GenderMale" name="registerGender" value="Male" required><br>
 
-          <label style="margin-right: 8px; margin-left: 5px;" for="GenderFemale">Female</label>
-          <input style="width:10px;" type="radio" id="GenderFemale" name="registerGender" value="Female"><br>
+          <input type="date" id="registerBirthday" placeholder="Enter Birthday" required />
+
+          <input style="width:10px;" type="radio" id="genderMale" name="registerGender" value="Male" required>
+          <label class="genderText" for="genderMale">Male</label><br>
+
+          <input style="width:10px;" type="radio" id="genderFemale" name="registerGender" value="Female">
+          <label class="genderText" for="genderFemale">Female</label><br>
+
           <input type="submit" id="registerButton" value="Register" />
         </form>
       </div>
@@ -70,8 +74,8 @@
         alert("Passwords don't match")
         return false
       }
-
     }
+
 
     function passwordValidation() {
       if (document.getElementById('registerPassword').value != document.getElementById('checkPassword').value) {
@@ -81,21 +85,14 @@
       else
         document.getElementById('message').innerHTML = "";
     }
-
-
-
-
-
-
   </script>
 
   <div class="footer">
-    <div class="InnerSection">
-      <!-- Add Logo -->
+    <div class="footerLeft">
       <h2>TODO</h2>
       <p>This to-do list project was prepared for the Web Application Development course in 2020.</p>
     </div>
-    <div class="Credits">
+    <div class="footerRight">
       Prepared by OZU students.
     </div>
   </div>

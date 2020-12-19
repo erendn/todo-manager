@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
 <head>
-  <title> Login Page </title>
+  <title>Login</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="shortcut icon"  type="image/png" href="assets\logo\logo1.png">  </link>
+  <link rel="shortcut icon" type="image/png" href="assets/logo.png" />
   <script type="text/javascript" src="scripts/utils.js"></script>
   <script type="text/javascript" src="scripts/components.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,21 +11,23 @@
 
 <body onload="return initSession()">
   <header>
-    <div class="logo">
-      <IMG class="logo1" href="index.html" SRC="assets\logo\logo1.png" ALT="some text">
-      <IMG class="logo2" href="index.html" SRC="assets\logo\logo2.png" ALT="some text">
+    <div class="logoContainer">
+      <a href="index.html">
+        <img class="logo" src="assets/logo.png">
+        <img class="logoText" src="assets/logo-text.png">
+      </a>
     </div>
   </header>
-  <hr class="hr-14">
-  <div class="container12" style="margin-top:100px; margin-bottom: 100px;">
-    <div class="user signinBx">
-      <div class="imgBx"><img src="assets\2921100196.png" alt="" /></div>
-      <div class="formBx">
+  <hr>
+  <div class="formContainer">
+    <div class="formContainerInside">
+      <div class="formImage"><img src="assets\clipboard.png" /></div>
+      <div class="formBox">
         <form method="POST" action="todo.html" onsubmit="return inputLogin()">
           <h2 style="color:#0B5F58;">Sign In</h2>
-          <input type="text" id="loginUsername" name="username" placeholder="Enter Username" required />
-          <input type="password" id="loginPassword" placeholder="Enter Password" required />
-          <input type="submit" id="LoginButton" value="Login" />
+          <input type="text" class="textInput" id="loginUsername" name="username" placeholder="Enter Username" required />
+          <input type="password" class="textInput" id="loginPassword" placeholder="Enter Password" required />
+          <input type="submit" id="loginButton" value="Login" />
         </form>
       </div>
     </div>
@@ -46,17 +48,14 @@
       else
         return true
     }
-
-
   </script>
 
   <div class="footer">
-    <div class="InnerSection">
-      <!-- Add Logo -->
+    <div class="footerLeft">
       <h2>TODO</h2>
       <p>This to-do list project was prepared for the Web Application Development course in 2020.</p>
     </div>
-    <div class="Credits">
+    <div class="footerRight">
       Prepared by OZU students.
     </div>
   </div>

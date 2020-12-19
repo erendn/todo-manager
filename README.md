@@ -3,8 +3,6 @@ TodoManager is a to-do list application that can save lists on local browser mem
 
 This is a project for CS391: Web Application Development course of Özyeğin University.
 
-## [Webpage](https://biarmic.github.io/todo-manager/)
-
 ## Work Allocation
 
 @biarmic -> Back-end development
@@ -23,3 +21,10 @@ This is a project for CS391: Web Application Development course of Özyeğin Uni
 * Add list element to a to-do list
 * Delete list element from a to-do list
 * Edit list element of a to-do list
+
+## Instructions
+* Download the repository
+* Open index.html file with your browser (Chrome is recommended)
+* Click on register button to go to register.html
+* Register to TodoManager
+* Now you can add lists and tasks

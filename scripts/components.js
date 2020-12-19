@@ -49,12 +49,11 @@ User.prototype.findId = function () {
  * @param {string} id 
  */
 User.prototype.removeList = function (id) {
-    for (var i = 0; i < this.lists.length; ++i) {
+    for (var i = 0; i < this.lists.length; ++i)
         if (this.lists[i].id == id) {
             this.lists.splice(i, 1)[0].remove();
             break;
         }
-    }
 }
 
 /**
@@ -62,10 +61,8 @@ User.prototype.removeList = function (id) {
  * @param {string} id 
  */
 User.prototype.getList = function (id) {
-    for (var i = 0; i < this.lists.length; ++i) {
-        if (this.lists[i].id == id) {
+    for (var i = 0; i < this.lists.length; ++i)
+        if (this.lists[i].id == id)
             return this.lists[i];
-        }
-    }
     return null;
 }

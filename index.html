@@ -3,50 +3,41 @@
 <html>
 
 <head>
-   <title>
-      Homepage - TodoManager
-   </title>
-   <link rel="stylesheet" href="style.css" >
-   </link>
-   <link rel="shortcut icon"  type="image/png" href="assets\logo\logo1.png">  </link>
-   <meta name="viewport" content="width=device-width, initial-scale=1" >
+   <title>Homepage</title>
+   <link rel="stylesheet" href="style.css" />
+   <link rel="shortcut icon" type="image/png" href="assets/logo.png" />
+   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
-
+<body onload="return initSession()">
    <script src="scripts/components.js"></script>
    <script src="scripts/utils.js"></script>
 
    <header>
-      <div class="logo">
-         <IMG class="logo1" href="index.html" SRC="assets\logo\logo1.png" ALT="some text">
-         <IMG class="logo2" href="index.html" SRC="assets\logo\logo2.png" ALT="some text">
+      <div class="logoContainer">
+         <a href="index.html">
+            <img class="logo" src="assets/logo.png">
+            <img class="logoText" src="assets/logo-text.png">
+         </a>
       </div>
    </header>
 
-   <hr class="hr-14">
-   <div class="button-login-div">
-
-      <a id="button1" type="button" class="button-login" onclick="location.href='login.html'"
-         ontouchstart=""><span>Login</span></a>
-      <a id="button2" type="button" class="button-login" onclick="location.href='register.html'"
-         ontouchstart=""><span>Register</span></a>
-
+   <hr>
+   <div class="indexButtonContainer">
+      <a type="button" class="indexButton" onclick="location.href='login.html'"><span>Login</span></a>
+      <a type="button" class="indexButton" onclick="location.href='register.html'"><span>Register</span></a>
    </div>
 
-
-
    <div class="footer" style="position: fixed;">
-      <div class="InnerSection">
-         <!-- Add Logo -->
+      <div class="footerLeft">
          <h2>TODO</h2>
          <p>This to-do list project was prepared for the Web Application Development course in 2020.</p>
       </div>
-      <div class="Credits" style="margin-top: 5vw;">
+
+      <div class="footerRight">
          Prepared by OZU students.
       </div>
    </div>
-
 
 </body>
 

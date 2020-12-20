@@ -24,14 +24,27 @@
 
   <div class="container">
     <div class="menuContainer">
-      <input class="textInput" type="text" id="newListName" placeholder="New List"></input>
-      <button class="button addButton" onclick="addNewList()">Add New List</button>
+      <input class="textInput" type="text" id="newListName" placeholder="New List" onkeydown="addListEnter()"></input>
+      <button class="button addButton" id="listButton" onclick="addNewList()">Add New List</button>
     </div>
 
     <div id="lists">
       <!-- Append lists here -->
     </div>
   </div>
+  
+  <script>
+  function addListEnter() {
+      if (event.key == 'Enter') {
+    document.getElementById("listButton").click();
+  }
+}
+ function addTaskEnter(id) {
+      if (event.key == 'Enter') {
+    document.getElementById("taskButton-" + id).click();
+  }
+}
+</script>
 
   <script src="scripts/list.js"></script>
   <script src="scripts/listElement.js"></script>

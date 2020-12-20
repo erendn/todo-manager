@@ -20,7 +20,7 @@ This is a project for CS391: Web Application Development course of Özyeğin Uni
 * Create to-do list
 * Add list element to a to-do list
 * Delete list element from a to-do list
-* Edit list element of a to-do list
+* Check/uncheck list element of a to-do list
 
 ## Instructions
 * Download the repository

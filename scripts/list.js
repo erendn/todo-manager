@@ -19,8 +19,8 @@ List.prototype.appendDOM = function () {
         <div class="listInside">
             <button class="button removeButton" onclick="removeList('${this.id}')">Remove List</button>
             <h1 class="listName">${this.name}</h1>
-            <input class="textInput inputMobile" type="text" id="newTaskName-${this.id}" placeholder="New Task"></input>
-            <button class="button addButton" onclick="addNewTask('${this.id}')">Add New Task</button>
+            <input class="textInput inputMobile" type="text" id="newTaskName-${this.id}" placeholder="New Task" onkeydown="addTaskEnter('${this.id}')"></input>
+            <button class="button addButton" id="taskButton-${this.id}" onclick="addNewTask('${this.id}')">Add New Task</button>
     </div>
     <ul>`;
     document.getElementById("lists").innerHTML += html;

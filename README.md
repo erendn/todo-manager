@@ -3,11 +3,13 @@ TodoManager is a to-do list application that can save lists on local browser mem
 
 This is a project for CS391: Web Application Development course of Özyeğin University.
 
+## React version is [here](https://github.com/demirhansevim/todo-manager)
+
 ## Work Allocation
 
 @biarmic -> Back-end development
 
-@politesiv -> Homepage and Todo page development
+@guvency -> Homepage and Todo page development
 
 @demirhansevim -> Register and Login page development
 
